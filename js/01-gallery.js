@@ -9,7 +9,7 @@ const newImg = galleryItems
     <img
       class="gallery__image"
       src="${image.preview}"
-      data-source="${image.original}"
+        data-source="${image.original}"                      
       alt="${image.description}"
     />
   </a>
@@ -18,15 +18,19 @@ const newImg = galleryItems
   .join("");
 
 list.insertAdjacentHTML("beforeend", newImg);
-const newGalaryItem = document.querySelector(".gallery__item");
-newGalaryItem.addEventListener("click", (e) => {
+list.addEventListener("click", (e) => {
   e.preventDefault();
 
+  if (e.target.tagName !== "IMG") {
+    return;
+  }
   const instance = basicLightbox.create(`
-    <img src="${image.original}" width="800" height="600">  
+    <img
+      class="gallery__image"
+      src="${e.target.dataset.source}"
+    />
 `);
 
   instance.show();
 });
-console.dir(newGalaryItem);
 console.log(galleryItems);
