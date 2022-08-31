@@ -25,5 +25,3 @@ list.addEventListener("click", (e) => {
   e.preventDefault();
   lightbox.open();
 });
-
-console.log(galleryItems);
