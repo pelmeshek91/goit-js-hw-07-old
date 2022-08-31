@@ -21,7 +21,7 @@ const lightbox = new SimpleLightbox(".gallery .gallery__item", {
   captionDelay: 250,
   captionsData: "alt",
 });
-list.addEventListener("click", (e) => {
-  e.preventDefault();
-  lightbox.open();
-});
+lightbox.next();
+
+/* list.addEventListener("click", (e) => {
+  e.preventDefault(); */
